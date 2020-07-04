@@ -1,9 +1,11 @@
 {
   "name": "assignment2",
   "version": "1.0.0",
-  "description": "",
+  "description": "about movies",
   "main": "Assignment2.js",
   "scripts": {
+    "start": "node Assignment2.js",
+    "dev": "nodemon Assignment2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

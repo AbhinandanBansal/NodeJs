@@ -12,7 +12,7 @@ app.get('/',(req,res) => {
 
 // Read file using express server
 app.get('/getMovies', (req,res) => {
-    fs.readFile('./SampleData.json',(err,result) => {
+    fs.readFile('./data/SampleData.json',(err,result) => {
         if(err){
             throw err;
         }else {
