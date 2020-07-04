@@ -1,11 +1,10 @@
 var fs=require('fs');
 
 
-fs.open('mytext.txt','r+',function(err,fd){
+fs.open('mytext.txt','r+',function(err,filedata){
    if(err){
        console.log(err);
    }else{
-       console.log(filedata.);
        console.log('File Opened successfully');
    }
 });
