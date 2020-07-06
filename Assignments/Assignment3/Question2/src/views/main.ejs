@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Employee Details</title>
+		<!--meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/styles.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"-->
+		
+
+	</head>
+	<body>
+        <div class="container">
+                <div >
+                    <center>
+                        <h1><%=title%></h1>
+                    </center>
+                </div>
+                <hr/>
+                <div>
+                <table><tr><td>Employee Name</td><td>Employee Id</td><td>Created At</td></tr>
+                
+                        <%for(let i=0; i<output.length;i++){%>
+                        <tr><td><%=output[i].name%></td><td><%=output[i].id%></td><td><%=output[i].createdAt%></td></tr>
+                        
+                        <%}%>
+                    </table>
+                    </div>
+                    </div>
+
+        </div>
+        
+    </body>
+</html>
