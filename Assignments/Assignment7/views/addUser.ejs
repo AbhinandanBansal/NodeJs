@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add User</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<div>
+        <span>
+            <h1>Add User</h1>
+        </span>
+        <div>
+            <p><%=error%></p>
+            <p><%=msg%></p>
+        </div>
+        <table border="1">
+            <tr><td>
+                <form action="/api/auth/addAdminOrUser" method="POST" name="frmAddUser">
+                    <div>
+						<span>Name:</span><input type="text" name="name">
+                    </div>
+                    <br/>
+					<div>
+						<span>Email:</span><input type="text" name="email">
+					</div>
+                    <br/>
+					<div>
+						<span>Password:</span><input type="password" name="password">
+                    </div>
+                    <br/>
+                    <div>
+                        <table><tr><td><span>User Type:</span></td><td>
+                            <input type="radio" name="userType" id="admin" value="1" />
+                            <label for="admin">Admin</label><br/>
+                            <input type="radio" name="userType" id="normal" value="2">
+                            <label for="normal">Normal</label>
+                        </td></tr></table>
+						
+					</div>
+                    <br/>
+					<div>
+							<button type="submit">
+								Add User
+							</button>
+					</div>
+                </form>
+            </td></tr>
+        </table>
+	</div>
+
+</body>
+</html>

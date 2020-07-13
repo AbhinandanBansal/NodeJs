@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shopping List</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    
+</head>
+<body>
+    <a  href="/users/logout">Logout</a>
+    <h1>Shopping List</h1>
+    <div>
+        <table border="1">
+            <tr><th>Name</th><th>Info</th><th>Price</th></tr>
+        <% for(var i = 0; i< data.length; i++) { %>
+            <tr><td><%= data[i].name %></td>
+                <td><%= data[i].info %></td>
+                <td><%= data[i].price %></td>
+            </tr>
+        <% } %>
+        </table>
+    </div>
+</body>
+</html>

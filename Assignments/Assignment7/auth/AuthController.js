@@ -25,7 +25,7 @@ router.use(bodyParser.json());
 
 // Register User
 router.post('/register', function(req, res) {
-  
+    console.log(req.body);
     const hashedPassword = bcrypt.hashSync(req.body.password, 8);
     var userType;
     if(!req.body.userType)
@@ -54,6 +54,33 @@ router.post('/register', function(req, res) {
     }); 
   });
 
+ // Add Admin or Normal User
+router.post('/addAdminOrUser', function(req, res) {
+    console.log(req.body);
+    const hashedPassword = bcrypt.hashSync(req.body.password, 8);
+    var userType;
+    if(!req.body.userType)
+    {
+        userType = 2;
+    }
+    else
+    {
+        userType = req.body.userType;
+    }
+    
+    User.create({
+      name : req.body.name,
+      email : req.body.email,
+      password : hashedPassword,
+      userType: userType
+    },
+    function (err, user) {
+      if (err) return res.status(500).send("There was a problem while adding the user.")
+      const string = encodeURIComponent('User added successfully');
+      res.redirect('/?msg=' + string);
+    }); 
+  }); 
+
 // Login User
 router.post('/login', function(req, res) {
     User.findOne({ email: req.body.email }, function (err, user) {
@@ -69,7 +96,7 @@ router.post('/login', function(req, res) {
         localStorage.setItem('authtoken', token)
         if(user.userType === 2)
         {
-        res.redirect(`/users/profile`);
+        res.redirect(`/products/shoppingList`);
         }
         else
         {

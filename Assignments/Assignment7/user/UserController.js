@@ -44,7 +44,6 @@ router.get('/', function (req, res) {
 // GETS A SINGLE USER FROM THE DATABASE
 router.get('/adminProfile', function (req, res) {
     var token = localStorage.getItem('authtoken')
-    console.log("token>>>",token)
     if (!token) {
         res.redirect('/')
     }
@@ -64,7 +63,6 @@ router.get('/adminProfile', function (req, res) {
 // GETS A LIST OF USERS FROM THE DATABASE
 router.get('/userslist', function (req, res) {
     var token = localStorage.getItem('authtoken')
-    console.log("token>>>",token)
     if (!token) {
         res.redirect('/')
     }
@@ -73,15 +71,14 @@ router.get('/userslist', function (req, res) {
         res.redirect('/')
     };
         var decoded = jwt.decode(token, {complete: true});
-        console.log(decoded.payload);
         if(decoded.payload.userType === 1)
         {    
         User.find({}, function (err, users) {
             if (err) {res.redirect('/')}
-            if (!user) {res.redirect('/')}
-            res.render('userList.ejs',{users})
+            //if (!user) {res.redirect('/')}
+            res.render('userList.ejs',{data:users})
         });
-        console.log("User List")
+        
         }
         else
         {
@@ -94,6 +91,11 @@ router.get('/userslist', function (req, res) {
 
 router.get('/signup',  (req, res) => {
     res.render('signup.ejs')
+ });
+
+ router.get('/addUser',  (req, res) => {
+    res.render('addUser.ejs',{error: req.query.valid?req.query.valid:'',
+    msg: req.query.msg?req.query.msg:''})
  });
 
  router.get('/logout', (req,res) => {

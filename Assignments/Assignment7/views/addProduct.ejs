@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add Product</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<div>
+        <span>
+            <h1>Add Product</h1>
+        </span>
+        <div>
+            <p><%=error%></p>
+            <p><%=msg%></p>
+        </div>
+        <table border="1">
+            <tr><td>
+                <form action="/products/addItem" method="POST" name="frmAddProduct">
+                    <div>
+						<span>Name:</span><input type="text" name="name">
+                    </div>
+                    <br/>
+					<div>
+						<span>Info:</span><input type="text" name="info">
+					</div>
+                    <br/>
+					<div>
+						<span>Quantity:</span><input type="text" name="quantity">
+					</div>
+                    <br/>
+					<div>
+						<span>Price:</span><input type="text" name="price">
+                    </div>
+                    <br/>
+					<div>
+							<button type="submit">
+								Add Product
+							</button>
+					</div>
+                </form>
+            </td></tr>
+        </table>
+	</div>
+
+</body>
+</html>
