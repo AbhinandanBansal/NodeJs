@@ -30,7 +30,7 @@ router.post('/register', function(req, res) {
     var userType;
     if(!req.body.userType)
     {
-        userType = 2;
+        userType = 1;
     }
     else
     {

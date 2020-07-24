@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <br>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">Update 24X7 Admin</a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/news/createnews">NewsForm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/news/newsList">EditNews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h2>Add News</h2>
+    <div>UserName:<%=data.name%> Email:<%=data.email%></div>
+    <p><%=msg%></p>
+    <p><%=error%></p>
+    <form action="/news/addNews" method="POST">
+      <div class="form-group">
+        <label for="tile">Title:</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter Description" name="description"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="text" class="form-control" id="url" placeholder="Enter URL" name="url">
+      </div>
+      <div class="form-group">
+        <label for="imageurl">Url To Image:</label>
+        <input type="text" class="form-control" id="imageurl" placeholder="Enter Url To Image" name="imageurl">
+      </div>
+      <div class="form-group">
+        <label for="publishedat">Published At:</label>
+        <input type="text" class="form-control" id="publishedat" placeholder="Enter Pulished At" name="publishedat">
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" class="form-control" id="category" placeholder="Enter Category" name="category">
+      </div>
+      <button type="submit" class="btn btn-primary">ADD</button>
+      <a href="/news/reset" class="btn btn-success" role="button">RESET</a>
+    </form>
+  </div>
+
+</body>
+
+</html>

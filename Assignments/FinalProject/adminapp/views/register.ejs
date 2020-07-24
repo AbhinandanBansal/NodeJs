@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update 24X7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <br>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Update 24X7 Admin</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/new">Sign In</a>
+      </li>
+    </ul>
+  </div> 
+</nav>
+
+  <table><tr><td colspan="3">  <p><%=error%></p>
+    <p><%=msg%></p></td></tr>
+  <tr><td>
+  <b>REGISTER</b><br/>
+  <form action="/api/auth/register" method="POST" name="register">
+    <div class="form-group">
+      <label for="nameNewUser">Name:</label>
+      <input type="text" class="form-control" id="nameNewUser" placeholder="Enter Name" name="nameNewUser" required>
+    </div>
+    <div class="form-group">
+      <label for="emailNewUser">Email:</label>
+      <input type="text" class="form-control" id="emailNewUser" placeholder="Enter Email" name="emailNewUser">
+    </div>
+    <div class="form-group">
+      <label for="passwordNewUser">Password:</label>
+      <input type="password" class="form-control" id="passwordNewUser" placeholder="Enter Password" name="passwordNewUser">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a href="/" class="btn btn-success" role="button">Reset</a>
+  </form></td><td width="40%"></td><td>
+  <form action="/api/auth/login" method="POST" name="login">
+    <div><b>LOG IN</b></div>
+    <div class="form-group">
+      <label for="emailLogin">Email:</label>
+      <input type="text" class="form-control" id="emailLogin" placeholder="Enter Email" name="emailLogin">
+    </div>
+    <div class="form-group">
+      <label for="passwordLogin">Password:</label>
+      <input type="password" class="form-control" id="passwordLogin" placeholder="Enter Password" name="passwordLogin">
+    </div>
+    <button type="submit" class="btn btn-primary">Log In</button>
+    <!--a href="/" class="btn btn-success" role="button">Reset</a-->
+  </form></td></tr></table>
+</div>
+
+</body>
+</html>

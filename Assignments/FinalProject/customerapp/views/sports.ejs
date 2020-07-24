@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <%- include ("./header") %>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <%- include ("./navigation") %>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <br />
+                <br />
+                <br />
+                <table>
+                    <%for(var i=0; i<data.length; i++){%>
+                    <tr>
+                        <td width="20%""><a href=" <%=data[i].url%>" target="_blank"><img src="<%=data[i].imageurl%>"
+                                height="50px" width="50px" /></a></td>
+                        <td><%=data[i].description%></td>
+                    </tr>
+                    <%}%>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><%- include ("./footer") %>
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

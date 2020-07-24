@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <%- include ("./header") %>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <%- include ("./navigation") %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <form action="/sendemail" method="POST">
+                    <table>
+                        <tr>
+                            <td>Email:</td>
+                            <td><input type="text" id="email" name="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Query:</td>
+                            <td><textarea type="text" id="query" name="query" cols="50" rows="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><br /><input type="submit" id="submit" name="submit"
+                                    value="Submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%- include ("./footer") %>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
